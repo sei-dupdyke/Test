@@ -10,6 +10,7 @@ Feel free to use this project as a sandbox for trying out new tools, scripts, or
 - Minimal setup for quick testing
 - Flexible structure for adding new files or scripts
 - Suitable for workflow and automation experiments
+- Demonstrates automating Microsoft Word to compose a sample letter
 
 ## Getting Started
 
@@ -24,9 +25,9 @@ Feel free to use this project as a sandbox for trying out new tools, scripts, or
    # Add installation steps here if needed
    ```
 
-3. **Run your tests or scripts:**
+3. **Run the application:**
    ```bash
-   # Add commands to run tests or scripts
+   dotnet run
    ```
 
 ## Contributing

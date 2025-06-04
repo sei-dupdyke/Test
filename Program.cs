@@ -1,29 +1,40 @@
 using System;
+using Word = Microsoft.Office.Interop.Word;
 
 class Program
 {
     /// <summary>
-    /// Entry point for the application. Asks the user for two numbers,
-    /// uses <see cref="Adder"/> to add them and prints the result.
+    /// Launches Microsoft Word and types a sample letter to the editor
+    /// character by character to mimic user input.
     /// </summary>
     static void Main(string[] args)
     {
-        Console.WriteLine("Enter first number:");
-        if (!int.TryParse(Console.ReadLine(), out int first))
-        {
-            Console.WriteLine("Invalid input");
-            return;
-        }
+        // Start Word and make it visible
+        var wordApp = new Word.Application();
+        wordApp.Visible = true;
 
-        Console.WriteLine("Enter second number:");
-        if (!int.TryParse(Console.ReadLine(), out int second))
-        {
-            Console.WriteLine("Invalid input");
-            return;
-        }
+        // Create a new document
+        var document = wordApp.Documents.Add();
 
-        var adder = new Adder();
-        int result = adder.Add(first, second);
-        Console.WriteLine($"The sum is: {result}");
+        string[] lines = new[]
+        {
+            "Dear Editor,",
+            "",
+            "I am writing to express my views on the recent events.",
+            "Thank you for considering my letter.",
+            "",
+            "Sincerely,",
+            "A Concerned Reader"
+        };
+
+        foreach (var line in lines)
+        {
+            foreach (char c in line)
+            {
+                wordApp.Selection.TypeText(c.ToString());
+                System.Threading.Thread.Sleep(50); // small delay to mimic typing
+            }
+            wordApp.Selection.TypeParagraph();
+        }
     }
 }
