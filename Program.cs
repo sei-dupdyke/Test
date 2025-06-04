@@ -6,6 +6,8 @@ class Program
     /// <summary>
     /// Launches Microsoft Word and types a sample letter to the editor
     /// character by character to mimic user input.
+    /// <summary>
+    /// Launches Microsoft Word, creates a new document, and simulates typing a predefined letter character by character with delays to mimic human typing.
     /// </summary>
     static void Main(string[] args)
     {
