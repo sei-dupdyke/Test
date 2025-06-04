@@ -11,6 +11,7 @@ Feel free to use this project as a sandbox for trying out new tools, scripts, or
 - Flexible structure for adding new files or scripts
 - Suitable for workflow and automation experiments
 - Demonstrates automating Microsoft Word to compose a sample letter
+- Cross-platform support: COM automation on Windows, AppleScript on macOS, and plain text fallback elsewhere
 
 ## Getting Started
 
